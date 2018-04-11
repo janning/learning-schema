@@ -1,0 +1,178 @@
+<!-- Reference: 80-character line... 80-character line... 80-character line. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- ========== METADATA =================================================== -->
+
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- SEO Note: Use numbers, dates, variants, punctuation, & action words. -->
+  
+  <!-- SEO Note: Appears on tab next to favicon, & default bookmark name -->
+  <!-- SEO Note (2018Q1): Title should not exceed 50 characters. -->
+  <title>Schema.org Accordion-Style Reference</title>
+  <!-- SEO Note (2018Q1): Keywords should be 10-20 words long. -->
+  <meta name="keywords" content=
+    "Schema.org,
+    SEO,
+    microdata,
+    itemscope,
+    itemtype,
+    itemprop
+  ">
+  <!-- SEO Note (2018Q1): Description should be 150-300 characters long. -->
+  <meta name="description" content=
+    "This accordion-style reference page offers a different layout of
+     schema.org's full hierarchy.  I use it to help me pick the combination
+     of itemtypes and itemprops with minimal vertical scrolling.">
+  <base target="_self"> <!-- href="http(s)://_/" -->
+
+<!-- ========== CASCADING STYLE SHEETS ===================================== -->
+
+  <style>
+    /* em is relative to the font-size of its direct or nearest parent,
+      rem is only relative to the html (root) font-size
+    */
+    /* shorthand order: top right bottom left, 
+      top right-&-left bottom,
+      top-&-bottom right-&-left
+    */
+
+    /* ---------- ELEMENT SELECTORS ----------------------------------------- */
+
+    body { 
+    margin: 2.0em;
+    font-family: "Courier New", Courier, monospace;
+    }
+    h1, h2, h3, h4, h5, h6 { margin: 1.0rem 0.0rem }
+    h1 { font-size: 2.2em }
+    h2 { font-size: 2.0em }
+    h3 { font-size: 1.8em }
+    h4 { font-size: 1.6em }
+    h5 { font-size: 1.4em }
+    h6 { font-size: 1.2em }
+    ul, ol { margin: -0.5em 2.0em 1.0em 2.0em }
+    li { margin: 0.0em 0.0em 0.5em 0.0em }
+    
+    /* ---------- ID SELECTORS ---------------------------------------------- */
+
+    #header {
+      margin-bottom: 2.0em;
+      border-bottom: 0.1em solid rgb(192,192,192);
+      padding-bottom: 0.75em;
+    }
+    #footer {
+      margin-top: 2.0em;
+      border-top: 0.1em solid rgb(192,192,192);
+      padding-top: 2.0em;
+    }
+
+    /* ---------- CLASS SELECTORS ------------------------------------------- */
+
+    /* Convert to accordion table. */
+
+    .accordion {
+      font-family: "Courier New", Courier, monospace;
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+    }
+    .active, .accordion:hover { background-color: #ccc }
+    .panel {
+      padding: 0 18px;
+      display: none;
+      background-color: white;
+      overflow: hidden;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ========== PAGE HEADER ================================================ -->
+
+  <div id="header">
+    <h1>Schema.org Accordion-Style Reference</h1>
+    <h5>Full Hierarchy <a href="http://schema.org/docs/full.html">Source</a></h5>
+  </div>
+
+<!-- ========== INTRO ====================================================== -->
+
+  <p>
+    This accordion-style reference page offers a different layout of
+    schema.org's full hierarchy.  I use it to help me pick the combination
+    of itemtypes and itemprops with minimal vertical scrolling.
+    The main hierarchy (without extensions) is summarized here.
+  </p>
+
+<!-- ========== ACCORDION ================================================== -->
+
+  <!-- Convert accordion table. -->
+
+  <button class="accordion"><b>Things</b> (that the markup describes)</button>
+  <div class="panel">
+    <p>Action</p>
+    <p>CreativeWork</p>
+    <p>Event</p>
+    <p>Intanglible</p>
+    <p>Organization</p>
+    <p>Person</p>
+    <p>Place</p>
+    <p>Product</p>
+  </div>
+
+  <button class="accordion"><b>Data Types</b> (textual property values)</button>
+  <div class="panel">
+    <p>Boolean</p>
+    <p>Date</p>
+    <p>DateTime</p>
+    <p>Number</p>
+    <p>Text</p>
+    <p>Time</p>
+  </div>
+
+<!-- ========== PAGE FOOTER ================================================ -->
+
+  <p id="footer">
+    Fair use as per
+    <a href="http://schema.org/docs/terms.html">
+      Schema.org's term of service
+    </a>.
+  </p>
+
+<!-- ========== JAVASCRIPT ================================================= -->
+
+  <!-- Put scripts at the end to speed up page loading for older browsers -->
+  <!-- May separate later to ...
+  <script src="Script.js"></script>
+  -->
+
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+  </script>
+
+</body>
+</html>
