@@ -13,7 +13,7 @@
   
   <!-- SEO Note: Appears on tab next to favicon, & default bookmark name -->
   <!-- SEO Note (2018Q1): Title should not exceed 50 characters. -->
-  <title>Schema.org Accordion-Style Reference</title>
+  <title>Schema.org (SEO Markup) Accordion-Style Reference</title>
   <!-- SEO Note (2018Q1): Keywords should be 10-20 words long. -->
   <meta name="keywords" content=
     "Schema.org,
@@ -21,7 +21,8 @@
     microdata,
     itemscope,
     itemtype,
-    itemprop
+    itemprop,
+    markup
   ">
   <!-- SEO Note (2018Q1): Description should be 150-300 characters long. -->
   <meta name="description" content=
@@ -56,6 +57,7 @@
     h6 { font-size: 1.2em }
     ul, ol { margin: -0.5em 2.0em 1.0em 2.0em }
     li { margin: 0.0em 0.0em 0.5em 0.0em }
+    br { font-size: 0.75em }
     
     /* ---------- ID SELECTORS ---------------------------------------------- */
 
@@ -72,28 +74,35 @@
 
     /* ---------- CLASS SELECTORS ------------------------------------------- */
 
+    .indent { margin: 0.00em 1.25em }
+
     /* Convert to accordion table. */
 
-    .accordion {
+    .terminal, .accordion {
       font-family: "Courier New", Courier, monospace;
-      background-color: #eee;
-      color: #444;
-      cursor: pointer;
-      padding: 18px;
       width: 100%;
+      padding: 1.25em;
       border: none;
       text-align: left;
       outline: none;
-      font-size: 15px;
+    }
+    .accordion {
+      cursor: pointer;
       transition: 0.4s;
     }
     .active, .accordion:hover { background-color: #ccc }
     .panel {
-      padding: 0 18px;
+      padding: 0.00em 1.25em;
       display: none;
       background-color: white;
       overflow: hidden;
     }
+    .a { background-color: #000000; color: #ffffff }
+    .b { background-color: #0a1429; color: #ffffff }
+    .c { background-color: #142952; color: #ffffff }
+    .d { background-color: #1f3d7a; color: #ffffff }
+    .e { background-color: #2952a3; color: #ffffff }
+    .f { background-color: #3366cc; color: #ffffff }
 
   </style>
 </head>
@@ -102,7 +111,7 @@
 <!-- ========== PAGE HEADER ================================================ -->
 
   <div id="header">
-    <h1>Schema.org Accordion-Style Reference</h1>
+    <h1>Schema.org (SEO Markup) Accordion-Style Reference</h1>
     <h5>Full Hierarchy <a href="http://schema.org/docs/full.html">Source</a></h5>
   </div>
 
@@ -114,24 +123,88 @@
     of itemtypes and itemprops with minimal vertical scrolling.
     The main hierarchy (without extensions) is summarized here.
   </p>
+  <br>
 
 <!-- ========== ACCORDION ================================================== -->
 
-  <!-- Convert accordion table. -->
+  <!-- Breaking characters-per-line convention & indentation rules. -->
 
-  <button class="accordion"><b>Things</b> (that the markup describes)</button>
-  <div class="panel">
-    <p>Action</p>
-    <p>CreativeWork</p>
-    <p>Event</p>
-    <p>Intanglible</p>
-    <p>Organization</p>
-    <p>Person</p>
-    <p>Place</p>
-    <p>Product</p>
+  <button class="accordion a"><b>Things</b> (that the markup describes)</button><div class="panel">
+    <button class="accordion b">Action</button><div class="panel">
+      <button class="accordion c">AchieveAction</button><div class="panel">
+        <button class="terminal d">LoseAction</button>
+        <button class="terminal d">TieAction</button>
+        <button class="terminal d">WinAction</button>
+      </div>
+      <button class="accordion c">AssessAction</button><div class="panel">
+        <button class="accordion d">ChooseAction</button><div class="panel">
+          <button class="terminal e">VoteAction</button>
+        </div>
+        <button class="terminal d">IgnoreAction</button>
+        <button class="accordion d">ReactAction</button><div class="panel">
+          <button class="terminal e">AgreeAction</button>
+          <button class="terminal e">DisagreeAction</button>
+          <button class="terminal e">DislikeAction</button>
+          <button class="terminal e">EndorseAction</button>
+          <button class="terminal e">LikeAction</button>
+          <button class="terminal e">WantAction</button>
+        </div>
+        <button class="terminal d">ReviewAction</button>
+      </div>
+      <button class="accordion c">ConsumeAction</button><div class="panel">
+        <button class="terminal d">DrinkAction</button>
+        <button class="terminal d">EatAction</button>
+        <button class="terminal d">InstallAction</button>
+        <button class="terminal d">ListenAction</button>
+        <button class="terminal d">ReadAction</button>
+        <button class="accordion d">UseAction</button><div class="panel">
+          <button class="terminal e">WearAction</button>
+        </div>
+        <button class="terminal d">ViewAction</button>
+        <button class="terminal d">WatchAction</button>
+      </div>
+      <button class="accordion c">ControlAction</button><div class="panel">
+        <button class="terminal d">ActivateAction</button>
+        <button class="terminal d">DeactivateAction</button>
+        <button class="terminal d">ResumeAction</button>
+        <button class="terminal d">SuspendAction</button>
+      </div>
+      <button class="accordion c">CreateAction</button><div class="panel">
+        <button class="terminal d">CookAction</button>
+        <button class="terminal d">DrawAction</button>
+        <button class="terminal d">FilmAction</button>
+        <button class="terminal d">PaintAction</button>
+        <button class="terminal d">PhotographAction</button>
+        <button class="terminal d">WriteAction</button>
+      </div>
+      <button class="accordion c">FindAction</button><div class="panel">
+      </div>
+      <button class="accordion c">InteractAction</button><div class="panel">
+      </div>
+      <button class="accordion c">MoveAction</button><div class="panel">
+      </div>
+      <button class="accordion c">OrganizeAction</button><div class="panel">
+      </div>
+      <button class="accordion c">PlayAction</button><div class="panel">
+      </div>
+      <button class="terminal c">SearchAction</button>
+      <button class="accordion c">TradeAction</button><div class="panel">
+      </div>
+      <button class="accordion c">TransferAction</button><div class="panel">
+      </div>
+      <button class="accordion c">UpdateAction</button><div class="panel">
+      </div>
+    </div>
+    <button class="accordion b">CreativeWork</button>
+    <button class="accordion b">Event</button>
+    <button class="accordion b">Intanglible</button>
+    <button class="accordion b">Organization</button>
+    <button class="accordion b">Person</button>
+    <button class="accordion b">Place</button>
+    <button class="accordion b">Product</button>
   </div>
 
-  <button class="accordion"><b>Data Types</b> (textual property values)</button>
+  <button class="accordion a"><b>Data Types</b> (textual property values)</button>
   <div class="panel">
     <p>Boolean</p>
     <p>Date</p>
